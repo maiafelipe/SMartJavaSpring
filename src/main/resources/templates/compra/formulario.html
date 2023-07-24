@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{template.html}">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de compra</title>
 </head>
+
 <body>
-    <h1> Cadastrando uma compra.</h1>
+    <div layout:fragment="content">
+        <h1> Cadastrando uma compra.</h1>
+
+        <form method="post" action="/compras">
+
+            <div>
+                <label for="descricao">Descrição:</label>
+                <input id="descricao" name="descricao" type="text">
+            </div>
+            <div>
+                <label for="local">Local:</label>
+                <input id="local" name="local" type="text">
+            </div>
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
 </body>
+
 </html>
