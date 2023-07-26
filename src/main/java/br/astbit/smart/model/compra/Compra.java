@@ -25,6 +25,10 @@ public class Compra {
         this.descricao = descricao;
         this.local = local;
     }
+    public void atualizaCompra(DadosAtualizaCompra dados) {
+        this.descricao = dados.descricao();
+        this.local = dados.local();
+    }
     public Long getId() {
         return id;
     }

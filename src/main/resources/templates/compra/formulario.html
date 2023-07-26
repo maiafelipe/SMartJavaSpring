@@ -12,15 +12,18 @@
 
         <form method="post" action="/compras">
 
-            <div>
-                <label for="descricao">Descrição:</label>
-                <input id="descricao" name="descricao" type="text">
+            <input th:if="${compra != null}" type="hidden" name="_method" value="put">
+            <input type="hidden" name="id" th:value="${compra?.id}">
+
+            <div class="mb-3">
+                <label for="descricao" class="form-label">Descrição:</label>
+                <input id="descricao" class="form-control" name="descricao" type="text" th:value="${compra?.descricao}">
             </div>
-            <div>
-                <label for="local">Local:</label>
-                <input id="local" name="local" type="text">
+            <div class="mb-3">
+                <label for="local" class="form-label">Local:</label>
+                <input id="local" class="form-control" name="local" type="text" th:value="${compra?.local}">
             </div>
-            <input type="submit" value="Cadastrar">
+            <input class="btn btn-primary" type="submit" value="Salvar">
         </form>
     </div>
 </body>
